@@ -129,95 +129,21 @@
 
                     <div class="col-md-9">
 
-                        <div class="blog-post">
-
-                            <a href="Careers-post.html"><img class="img-carousel post-img" src="assets/img/portfolio-1.jpg"
-                                    alt=""></a>
-
+                        <div class="blog-post" v-for="job of jobs">
+                            <a :href="'Careers-post.html?id=' + job._id">
+                              <img class="img-carousel post-img" src="assets/img/portfolio-1.jpg" alt="">
+                            </a>
                             <div class="post-content">
-                                <h3><a class="post-title" href="Careers-post.html">Software Engineer</a></h3>
-                                <ul class="post-meta list-unstyled">
-                                    <li><a href="#">Location: San Francisco</a></li>
-                                    <li><a href="#">Type: Full-Time</a></li>
-                                    <!-- <li><a href="blog-post.html#Comments">2 Comments</a></li> -->
-                                </ul><!-- /.post-meta -->
-                                <p class="section-text">Join our engineering team to work on cutting-edge projects in
-                                    fintech. We are looking for creative problem solvers with a passion for innovation.
-                                </p>
+                              <h3><a :href="'Careers-post.html?id=' + job._id" class="post-title">{{ job.title }}</a></h3>
+                              <ul class="post-meta list-unstyled">
+                                <!-- <li><a :href="'#Location:' + job.location">{{ 'Location: ' + job.location }}</a></li>
+                                <li><a :href="'#Type:' + job.type">{{ 'Type: ' + job.type }}</a></li> -->
+                                <!-- Uncomment this line if comments are available -->
+                                <!-- <li><a :href="'blog-post.html#Comments'">{{ job.commentsCount + ' Comments' }}</a></li> -->
+                              </ul><!-- /.post-meta -->
+                              <p class="section-text">{{ job.description }}</p>
                             </div><!-- /.post-content -->
-
-                        </div><!-- /.blog-post -->
-
-
-                        <div class="blog-post">
-
-                            <div class="post-img-slider">
-                                <img class="img-carousel post-img" src="assets/img/portfolio-5.jpg" alt="">
-                                <img class="img-carousel post-img" src="assets/img/portfolio-2.jpg" alt="">
-                                <img class="img-carousel post-img" src="assets/img/portfolio-3.jpg" alt="">
-                                <img class="img-carousel post-img" src="assets/img/portfolio-4.jpg" alt="">
-                            </div><!-- /.post-img-slider -->
-
-                            <div class="post-content">
-
-                                <h3><a class="post-title" href="Careers-post.html">UI/UX Designer</a></h3>
-                                <ul class="post-meta list-unstyled">
-                                    <li><a href="#">Location: Remote</a></li>
-                                    <li><a href="#">Type: Contract</a></li>
-                                    <!-- <li><a href="blog-post.html#Comments">15 Comments</a></li> -->
-                                </ul><!-- /.post-meta -->
-                                <p class="section-text">Seeking a creative UI/UX Designer to enhance user experience for
-                                    our digital products. Ideal candidates should have a portfolio demonstrating
-                                    innovative design solutions.</p>
-
-
-                            </div><!-- /.post-content -->
-
-                        </div><!-- /.blog-post -->
-
-                        <div class="blog-post">
-
-                            <iframe src="https://player.vimeo.com/video/88989456" width="100%" height="420"
-                                allowfullscreen></iframe>
-
-                            <div class="post-content">
-
-                                <h3><a class="post-title" href="Careers-post.html">Data Scientist</a></h3>
-                                <ul class="post-meta list-unstyled">
-                                    <li><a href="#">Location: New York</a></li>
-                                    <li><a href="#">Type: Full-Time</a></li>
-                                    <!-- <li><a href="blog-post.html#Comments">11 Comments</a></li> -->
-                                </ul><!-- /.post-meta-->
-
-                                <p class="section-text">We are looking for a Data Scientist with expertise in machine
-                                    learning and statistical analysis to join our data team and contribute to
-                                    data-driven decisions.</p>
-
-
-                            </div><!-- /.post-content -->
-
-                        </div><!-- /.blog-post -->
-
-                        <div class="blog-post">
-
-                            <div class="post-content mt-0">
-
-                                <h3><a class="post-title" href="Careers-post.html">Product Manager</a></h3>
-                                <ul class="post-meta list-unstyled">
-                                    <li><a href="#">Location: Berlin</a></li>
-                                    <li><a href="#">Type: Full-Time</a></li>
-                                    <!-- <li><a href="blog-post.html#Comments">15 Comments</a></li> -->
-                                </ul><!-- /.post-meta -->
-
-                                <p class="section-text">Looking for a dynamic Product Manager to lead product
-                                    development and strategy. Experience in agile methodologies and product lifecycle
-                                    management preferred.</p>
-
-
-                            </div><!-- /.post-content -->
-
-                        </div><!-- /.blog-post -->
-
+                          </div><!-- /.blog-post -->
 
                         <div class="text-center">
                             <ul class="pagination">
@@ -260,12 +186,15 @@
                                     <li><a href="#">Sales</a></li>
                                     <li><a href="#">Customer support</a></li>
                                 </ul>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+                            
                             </div><!-- /.widget-categories -->
 
-                            <div class="widget widget-latest-posts">
+                            <div class="widget widget-latest-jobs">
                                 <h4 class="widget-title">Latest Posts</h4>
 
-                                <ul class="list-unstyled posts-list">
+                                <ul class="list-unstyled jobs-list">
                                     <li>
                                         <a href="Careers-post.html">
                                             <div class="widget-thumb">
@@ -305,7 +234,7 @@
                                         </a>
                                     </li><!-- /.latest-post -->
                                 </ul>
-                            </div><!-- /.widget-latest-posts -->
+                            </div><!-- /.widget-latest-jobs -->
 
                             <div class="widget widget-tags">
                                 <h4 class="widget-title">Tags</h4>
@@ -441,6 +370,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.slicknav.min.js"></script>
@@ -449,6 +381,39 @@
     <script src="assets/js/skrollr.min.js"></script>
     <script src="assets/js/jquery.countTo.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/api.js"></script>
+
+
+
+    <script>
+        const app = new Vue({
+          el: '#main',
+          data: {
+            jobs: [] // Initialize an empty array to store blog jobs
+          },
+          mounted() {
+            // Fetch blog jobs from the custom function when the Vue app is mounted
+            this.fetchJobs();
+          },
+          methods: {
+            fetchJobs() {
+              // Use the custom function to retrieve blog jobs
+              getAllJobs()
+                .then(jobs => {
+                    console.log(jobs.map(p => p._id))
+                  this.jobs = jobs; // Assign fetched blog jobs to the data property
+                })
+                .catch(error => {
+                  console.error('Error fetching jobs:', error);
+                });
+            },
+            formatDate(date) {
+              // Implement a function to format the date as needed
+              return new Date(date).toLocaleDateString();
+            }
+          }
+        });
+      </script>
 
 </body>
 

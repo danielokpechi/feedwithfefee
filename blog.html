@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Blog | VentureBridge</title>
+    <title>Blog | FEEDWITHFEFE</title>
 
     <meta name="description" content="venturebridge">
     <meta name="keywords" content="html, css, twitter bootstrap, javascript, jquery, responsive">
@@ -47,7 +47,9 @@
 
 <body>
 
-    <header id="masthead" class="site-header site-header-fill">
+    <header id="masthead" class="site-header" data-anchor-target=".hero"
+        data-top="background: rgba(59,58,54,0); border-bottom-color: rgba(226,226,226,0);"
+        data-top-bottom="background: rgba(59,58,54,1); border-bottom-color: rgba(226,226,226,1);">
 
         <nav id="primary-navigation" class="site-navigation">
 
@@ -55,9 +57,10 @@
 
                 <div class="navbar-header">
 
-                    <a href="index.html" class="site-title yellow-text">Venture<span
-                            class="white-text">Bridge</span></a>
+                    <a href="index.html" class="site-title yellow-text">Feed <span class="white-text">With </span>
+                        Fefe</a>
                 </div><!-- /.navbar-header -->
+
 
                 <div class="main-menu" id="perfect-navbar-collapse">
 
@@ -65,35 +68,15 @@
 
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
-                        <li class="dropdown active">
-                            <a href="blog.html" class="dropdown-toggle" data-toggle="dropdown"
-                                aria-expanded="false">Blog <i class="fa fa-angle-down hidden-xs"
-                                    aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog-post.html">Blog Post</a></li>
-                            </ul><!-- /.dropdown-menu -->
-                        </li><!-- /.dropdown -->
-                        <li class="dropdown">
-                            <a href="portfolio.html" class="dropdown-toggle" data-toggle="dropdown"
-                                aria-expanded="false">Start-Ups <i class="fa fa-angle-down hidden-xs"
-                                    aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="portfolio-item.html">Start-Ups Item</a></li>
-                            </ul><!-- /.dropdown-menu -->
-                        </li><!-- /.dropdown -->
+                        <li class="active"><a href="blog.html">BLOG</a></li>
+                        <li><a href="portfolio.html">gallery</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li class="dropdown ">
-                            <a href="Careers.html" class="dropdown-toggle" data-toggle="dropdown"
-                                aria-expanded="false">Careers <i class="fa fa-angle-down hidden-xs"
-                                    aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="Careers-post.html">Careers Post</a></li>
-                            </ul><!-- /.dropdown-menu -->
-                        </li><!-- /.dropdown -->
+                        <li class=""><a href="donate.html">Donate</a></li>
                         <li class=""><a href="FAQ.html">FAQ</a></li>
-                        <li class=""><a href="/Our-team.html">Our team</a></li>
-                        <li class=""><a href="/login.html">Login</a></li>
-                        <li class=""><a href="/signup.html">Sign-up</a></li>
+                        <li class=""><a href="volunteer.html">Volunteer</a></li>
+
+                        <li class=""><a href="Our-team.html">Our team</a></li>
+
                     </ul><!-- /.navbar-nav -->
 
                 </div><!-- /.navbar-collapse -->
@@ -103,19 +86,26 @@
         </nav><!-- /.site-navigation -->
 
     </header><!-- /#masthead -->
+    <div class="hero hero-max-720 hero-about-us background-overlay">
+
+        <div class="hero-text">
+            <h1 class="white-text">BLOG</h1>
+        </div> <!-- /.hero-text -->
+        <div class="hero-arrow">
+            <a class="scrollTo" href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+        </div><!-- /.hero-arrow -->
+
+    </div><!-- /.hero -->
 
     <main id="main" class="site-main">
 
         <section class="site-section-small section-blog">
 
             <div class="container">
-
                 <div class="text-center">
-
-                    <h1 class="section-title-big">Startup Insights</h1>
-                    <p class="section-text">Explore our blog for insightful articles, personal reflections and ideas
-                        that inspire action on the topics you care about.</p>
-
+                    <h1 class="section-title-big">Charity Insights</h1>
+                    <p class="section-text">Explore our blog for inspiring stories, updates on our projects, and
+                        insights into our work towards eradicating hunger and poverty.</p>
                 </div>
 
                 <ol class="breadcrumb">
@@ -125,206 +115,104 @@
 
                 <div class="row">
 
-                    <div class="col-md-9">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <!-- BLOG POSTS -->
+                            <div class="blog-post">
+                                <img class="img-carousel post-img" src="assets/images/IMG_4974.jpg"
+                                    alt="Blog Post Title">
+                                <div class="post-content">
+                                    <h3><a class="post-title">Impact of Our Community Kitchens</a>
+                                    </h3>
+                                    <p class="post-meta">Posted on July 15, 2023</p>
+                                    <p class="section-text">
+                                        Our community kitchens have been making a significant impact in providing
+                                        nutritious
+                                        meals to those in need. Read about the journey and the lives touched by this
+                                        initiative.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-                        <div class="blog-post">
-
-                            <a href="blog-post.html"><img class="img-carousel post-img" src="assets/img/portfolio-1.jpg"
-                                    alt=""></a>
-
-                            <div class="post-content">
-
-                                <h3><a class="post-title" href="blog-post.html">Is Passion Enough for Business?</a></h3>
-                                <ul class="post-meta list-unstyled">
-                                    <li><a href="#">Startup Culture</a></li>
-                                    <li><a href="#">Feb 12, 2022</a></li>
-                                    <li><a href="blog-post.html#Comments">2 Comments</a></li>
-                                </ul><!-- /.post-meta -->
-
-                                <p class="section-text">Discover how passion, combined with vision and execution, drives
-                                    the success of startups. Learn from the stories of entrepreneurs who turned their
-                                    passions into profitable ventures.</p>
-
-                            </div><!-- /.post-content -->
-
-                        </div><!-- /.blog-post -->
-
-
-                        <div class="blog-post">
-
-                            <div class="post-img-slider">
-                                <img class="img-carousel post-img" src="assets/img/portfolio-5.jpg" alt="">
-                                <img class="img-carousel post-img" src="assets/img/portfolio-2.jpg" alt="">
-                                <img class="img-carousel post-img" src="assets/img/portfolio-3.jpg" alt="">
-                                <img class="img-carousel post-img" src="assets/img/portfolio-4.jpg" alt="">
-                            </div><!-- /.post-img-slider -->
-
-                            <div class="post-content">
-
-                                <h3><a class="post-title" href="blog-post-fintech.html">The Future of Fintech:
-                                        Transforming Finance</a></h3>
-                                <ul class="post-meta list-unstyled">
-                                    <li><a href="#">Fintech</a></li>
-                                    <li><a href="#">Mar 10, 2022</a></li>
-                                    <li><a href="blog-post.html#Comments">15 Comments</a></li>
-                                </ul><!-- /.post-meta -->
-
-                                <p class="section-text">Explore how financial technology is reshaping banking,
-                                    investment, and everyday transactions. This article delves into the innovations
-                                    driving the fintech revolution and what it means for startups.</p>
-
-                            </div><!-- /.post-content -->
-
-                        </div><!-- /.blog-post -->
-
-                        <div class="blog-post">
-
-                            <iframe src="https://player.vimeo.com/video/88989456" width="100%" height="420"
-                                allowfullscreen></iframe>
-
-                            <div class="post-content">
-
-                                <h3><a class="post-title" href="blog-post-startup-success.html">Succeeding in the
-                                        Startup World: Key Strategies</a></h3>
-                                <ul class="post-meta list-unstyled">
-                                    <li><a href="#">Entrepreneurship</a></li>
-                                    <li><a href="#">Apr 22, 2022</a></li>
-                                    <li><a href="blog-post.html#Comments">11 Comments</a></li>
-                                </ul><!-- /.post-meta-->
-
-                                <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit
-                                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua.</p><!-- /.section-text -->
-
-                            </div><!-- /.post-content -->
-
-                        </div><!-- /.blog-post -->
-
-                        <div class="blog-post">
-
-                            <div class="post-content mt-0">
-
-                                <h3><a class="post-title" href="blog-post-startup-success.html">Succeeding in the
-                                        Startup World: Key Strategies</a></h3>
-                                <ul class="post-meta list-unstyled">
-                                    <li><a href="#">Entrepreneurship</a></li>
-                                    <li><a href="#">Apr 22, 2022</a></li>
-                                    <li><a href="blog-post.html#Comments">15 Comments</a></li>
-                                </ul><!-- /.post-meta -->
-
-                                <p class="section-text">Discover the strategies that successful startups use to navigate
-                                    the competitive landscape. This post covers everything from securing funding to
-                                    scaling your business effectively.</p>
-
-                            </div><!-- /.post-content -->
-
-                        </div><!-- /.blog-post -->
+                        <div class="col-md-6">
+                            <!-- BLOG POSTS -->
+                            <div class="blog-post">
+                                <img class="img-carousel post-img" src="assets/images/IMG_4973.jpg"
+                                    alt="Blog Post Title">
+                                <div class="post-content">
+                                    <h3><a class="post-title">Impact of Our Community Kitchens</a>
+                                    </h3>
+                                    <p class="post-meta">Posted on July 15, 2023</p>
+                                    <p class="section-text">
+                                        Our community kitchens have been making a significant impact in providing
+                                        nutritious
+                                        meals to those in need. Read about the journey and the lives touched by this
+                                        initiative.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
 
-                        <div class="text-center">
-                            <ul class="pagination">
-                                <li><a href="#">
-                                        << </a>
-                                </li>
-                                <li><a href="#">
-                                        < </a>
-                                </li>
-                                <li><a href="#">4</a></li>
-                                <li class="active"><a href="#">5</a></li>
-                                <li><a href="#">6</a></li>
-                                <li><a href="#">></a></li>
-                                <li><a href="#">>></a></li>
-                            </ul><!-- /.pagination -->
-                        </div><!-- /.text-center -->
+                        <div class="col-md-6">
+                            <!-- BLOG POSTS -->
+                            <div class="blog-post">
+                                <img class="img-carousel post-img" src="assets/images/IMG_4972.jpg"
+                                    alt="Blog Post Title">
+                                <div class="post-content">
+                                    <h3><a class="post-title">Impact of Our Community Kitchens</a>
+                                    </h3>
+                                    <p class="post-meta">Posted on July 15, 2023</p>
+                                    <p class="section-text">
+                                        Our community kitchens have been making a significant impact in providing
+                                        nutritious
+                                        meals to those in need. Read about the journey and the lives touched by this
+                                        initiative...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
+
+                        <div class="col-md-6">
+                            <!-- BLOG POSTS -->
+                            <div class="blog-post">
+                                <img class="img-carousel post-img" src="assets/images/IMG_4971.jpg"
+                                    alt="Blog Post Title">
+                                <div class="post-content">
+                                    <h3><a class="post-title">Impact of Our Community Kitchens</a>
+                                    </h3>
+                                    <p class="post-meta">Posted on July 15, 2023</p>
+                                    <p class="section-text">
+                                        Our community kitchens have been making a significant impact in providing
+                                        nutritious
+                                        meals to those in need. Read about the journey and the lives touched by this
+                                        initiative...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <!-- BLOG POSTS -->
+                            <div class="blog-post">
+                                <img class="img-carousel post-img" src="assets/images/IMG_4970.jpg "
+                                    alt="Blog Post Title">
+                                <div class="post-content">
+                                    <h3><a class="post-title">Impact of Our Community Kitchens</a>
+                                    </h3>
+                                    <p class="post-meta">Posted on July 15, 2023</p>
+                                    <p class="section-text">
+                                        Our community kitchens have been making a significant impact in providing
+                                        nutritious
+                                        meals to those in need. Read about the journey and the lives touched by this
+                                        initiative...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <aside class="col-md-3">
-
-                        <div class="sidebar">
-
-                            <div class="widget search-form">
-                                <form>
-                                    <input class="form-control" type="search" placeholder="Search">
-                                    <button type="submit">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                </form>
-                            </div><!-- /.search-form -->
-
-                            <div class="widget widget-categories">
-                                <h4 class="widget-title">Categories</h4>
-
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Fintech</a></li>
-                                    <li><a href="#">Biotech</a></li>
-                                    <li><a href="#">Edutech</a></li>
-                                    <li><a href="#">Artificial Intelligence</a></li>
-                                    <li><a href="#">Business</a></li>
-                                </ul>
-                            </div><!-- /.widget-categories -->
-
-                            <div class="widget widget-latest-posts">
-                                <h4 class="widget-title">Latest Posts</h4>
-
-                                <ul class="list-unstyled posts-list">
-                                    <li>
-                                        <a href="blog-post.html">
-                                            <div class="widget-thumb">
-                                                <img class="img-carousel" src="assets/img/portfolio-7.jpg" alt="">
-                                            </div>
-                                            <div class="widget-post-info">
-                                                <h4 class="widget-post-title">Business Perfect is the best Free Theme
-                                                </h4>
-                                                <p class="widget-post-date">Sep 25, 2015</p>
-                                            </div><!-- /.widget-post-info -->
-                                        </a>
-                                    </li><!-- /.latest-post -->
-
-                                    <li>
-                                        <a href="blog-post.html">
-                                            <div class="widget-thumb">
-                                                <img class="img-carousel" src="assets/img/portfolio-8.jpg" alt="">
-                                            </div>
-                                            <div class="widget-post-info">
-                                                <h4 class="widget-post-title">We provide unique solutions</h4>
-                                                <p class="widget-post-date">Sep 23, 2015</p>
-                                            </div><!-- /.widget-post-info -->
-
-                                        </a>
-                                    </li><!-- /.latest-post -->
-
-                                    <li>
-                                        <a href="blog-post.html">
-                                            <div class="widget-thumb">
-                                                <img class="img-carousel" src="assets/img/portfolio-9.jpg" alt="">
-                                            </div>
-                                            <div class="widget-post-info">
-                                                <h4 class="widget-post-title">We are creative minds</h4>
-                                                <p class="widget-post-date">Sep 22, 2015</p>
-                                            </div><!-- /.widget-post-info -->
-                                        </a>
-                                    </li><!-- /.latest-post -->
-                                </ul>
-                            </div><!-- /.widget-latest-posts -->
-
-                            <div class="widget widget-tags">
-                                <h4 class="widget-title">Tags</h4>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">technologies</a></li>
-                                    <li><a href="#">Creative</a></li>
-                                    <li><a href="#">Deisgn</a></li>
-                                    <li><a href="#">Business</a></li>
-                                    <li><a href="#">Modern</a></li>
-                                    <li><a href="#">Jobs</a></li>
-                                    <li><a href="#">Resources</a></li>
-                                    <li><a href="#">Corporate</a></li>
-                                </ul>
-                            </div><!-- /.widget-tags -->
-                        </div><!-- /.sidebar -->
-
-                    </aside>
 
                 </div>
 
@@ -332,17 +220,6 @@
 
         </section><!-- /.section-blog -->
 
-        <section class="site-section-small section-work-with-us yellow-bg text-center">
-
-            <div class="container">
-
-                <p class="section-title-small white-text mb-50">Coming together is a beginning, keeping together is
-                    progress, working together is success.</p>
-                <a class="btn" href="#">Start Now</a>
-
-            </div>
-
-        </section><!-- /.section-work-with-us -->
 
         <section class="social-networks">
 
@@ -366,83 +243,79 @@
         </section><!-- /.social-networks -->
 
     </main><!-- /.site-main -->
+    <section class="site-section-small section-work-with-us yellow-bg text-center">
+        <div class="container">
+            <p class="section-title-small white-text mb-50">Join us in our mission to eradicate hunger and transform
+                lives. Together, we can make a difference in communities across Nigeria.</p>
+                <a class="btn" href="volunteer.html">Get Involved</a>
+        </div>
+    </section>
 
     <footer id="colophon" class="site-footer">
-
         <div class="container">
-
             <div class="email">
-                <a href="mailto:venturebridge@gmail.com">venturebridge@gmail.com</a>
+                <a href="mailto:feedwithfefe@gmail.com">feedwithfefe@gmail.com</a>
             </div><!-- /.email -->
 
             <div class="row">
-
                 <div class="col-md-3 col-xs-6">
-
                     <div class="mb-xs-20">
-                        <a href="index.html" class="site-title yellow-text">Venture<span>Bridge</span></a>
-                        <p class="mb-0">Connecting innovative minds with the resources they need, VentureBridge is your
-                            gateway to transforming ideas into reality. Join a community where visionaries and investors
-                            create tomorrow's success stories.</p>
+                        <img src="assets/images/logo.jpg" style="height: 72px; width: 100px;">
+                        <!-- Adjust the image source as needed -->
+                        <p class="mb-0">Feed with Fefe Foundation is dedicated to eradicating hunger and poverty,
+                            providing sustenance and support to communities in need across Nigeria.</p>
                     </div>
-
-
                 </div>
 
                 <div class="col-md-3 col-xs-6">
-
                     <div class="mb-xs-20">
                         <h4 class="small-title">Get in touch</h4>
                         <ul class="list-unstyled">
-                            <li>Phone: <a href="tel:+08124363539">+(234) 081 2436 3539</a></li>
-                            <li>Email: <a href="mailto:venturebridge@gmail.com">venturebridge@gmail.com</a></li>
-                            <li>Fax: <a href="tel:+09058377657">+(234) 090 5837 7657</a></li>
+                            <li>Phone: <a href="tel:+2348124363539">+(234) 081 2436 3539</a></li>
+                            <li>Email: <a href="mailto:feedwithfefe@gmail.com">feedwithfefe@gmail.com</a></li>
+                            <!-- Include additional contact details if necessary -->
                         </ul>
                     </div>
-
-
                 </div>
 
                 <div class="col-md-3 col-xs-6">
-
                     <div class="mb-xs-20">
                         <h4 class="small-title">Links</h4>
                         <ul class="list-unstyled">
                             <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="startups.html">startups</a></li>
+                            <li><a href="our-work.html">Our Work</a></li>
                             <li><a href="contact.html">Contact</a></li>
+                            <!-- Update links as needed -->
                         </ul>
                     </div>
-
                 </div>
 
                 <div class="col-md-3 col-xs-6">
-
                     <div class="mb-xs-20">
-                        <h4 class="small-title">Location</h4>
+                        <h4 class="small-title">Get Involved</h4>
                         <ul class="list-unstyled">
-                            <li>VentureBridge</li>
-                            <li>Babcock University</li>
-                            <li>Bethel Splendor</li>
+                            <li><a href="volunteer.html">Volunteer with Us</a></li>
+                            <li><a href="donate.html">Make a Donation</a></li>
                         </ul>
+
                     </div>
-
                 </div>
-
             </div>
-
         </div>
 
-
         <div class="copyright">
-            <p>&copy; 2023 VentureBridge | Made by <a href="/" class="yellow-text">Group 5(Web design)</a></p>
+            <p>&copy; 2024 Feed with Fefe Foundation | Made by <a href="/" class="yellow-text">FEEDWITHFEFE</a></p>
         </div><!-- /.copyright -->
-
     </footer><!-- /.site-footer -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"
+        integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.slicknav.min.js"></script>
@@ -451,6 +324,10 @@
     <script src="assets/js/skrollr.min.js"></script>
     <script src="assets/js/jquery.countTo.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/api.js"></script>
+
+
+
 
 </body>
 

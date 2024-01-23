@@ -118,23 +118,23 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
-                        <form class="form-horizontal my-90">
+                        <form class="form-horizontal my-90" @submit.prevent="signUpFunc">
                         <h3 class="section-title-small text-center mb-50">Sign-up</h3>
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="form-control" type="" name="contact-email" placeholder="First-name *" required>
+                                <input class="form-control" v-model="formBody.first_name" type="" name="contact-email" placeholder="First-name *" required>
                             </div>
                             <div class="col-sm-12">
-                                <input class="form-control" type="" name="contact-email" placeholder="Last-name *" required>
+                                <input class="form-control" v-model="formBody.last_name" type="" name="contact-email" placeholder="Last-name *" required>
                             </div>
                             <div class="col-sm-12">
-                                <input class="form-control" type="email" name="contact-email" placeholder="E-mail *" required>
+                                <input class="form-control" v-model="formBody.email" type="email" name="contact-email" placeholder="E-mail *" required>
                             </div>
                             <div class="col-sm-12">
-                                <input class="form-control" type="password" name="contact-password" placeholder="Password *" required>
+                                <input class="form-control" v-model="formBody.password" type="password" name="contact-password" placeholder="Password *" required>
                             </div>
                             <div class="col-sm-12">
-                               <input class="form-control" type="password" name="contact-password" placeholder=" Confirm Password *" required>
+                               <input class="form-control" v-model="formBody.confirm_password" type="password" name="contact-password" placeholder=" Confirm Password *" required>
                             </div>
                             <div class="col-sm-12">
                                 <div class="checkbox">
@@ -144,7 +144,7 @@
                             </div>
                         </div>
                         <div class="text-right">
-                            <button class="btn btn-yellow">Sign up</button>
+                            <button class="btn btn-yellow" :disabled="formBody.password != formBody.confirm_password">Sign up</button>
                         </div>
                         </form><!-- form-horizontal -->
                     </div>
@@ -260,6 +260,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.slicknav.min.js"></script>
@@ -269,5 +272,43 @@
     <script src="assets/js/jquery.countTo.min.js"></script>
     <script src="assets/js/script.js"></script>
 
+    <script src="assets/js/api.js"></script>
+
+    <script>
+      const app = new Vue({
+        el: '#main',
+        data: {
+          formBody: { // Object to store form input for contact submission
+            first_name: '',
+            last_name: '',
+            email: '',
+            password: '',
+            confirm_password: ''
+          }
+        },
+        methods: {
+            signUpFunc() {
+            // Call a function to handle the submission of the contact form
+            // Replace this with your logic to submit the contact form data
+            // For example, you might use Axios or fetch to send a POST request to your server
+    
+            // Example: This simply logs the form data in the console
+
+            const name = this.formBody.first_name + ' ' + this.formBody.last_name
+
+            const {email, password} = this.formBody
+
+            signUp({name, email, password})
+            .then(response => {
+
+                if (response)
+                    alert("You're Signed Up successfully!");
+                console.log('SignUp Form Submitted:', this.login);
+            });
+
+          }
+        }
+      });
+    </script>
 </body>
 </html>

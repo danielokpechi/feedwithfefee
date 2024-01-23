@@ -138,36 +138,24 @@
 
                                 <div class="post-content">
 
-                                    <h2 class="post-title">Open Position: Senior Software Developer</h2>
+                                    <h2 class="post-title">{{ job.title }}</h2>
                                     <ul class="post-meta list-unstyled">
-                                        <li><a href="#">Entrepreneurship</a></li>
-                                        <li><a href="#">Oct 5, 2022</a></li>
-                                        <!-- <li><a href="#Comments">15 Comments</a></li> -->
+                                      <li><a href="#">{{ job.date }}</a></li>
+                                      <!-- Uncomment this line if comments count is available -->
+                                      <!-- <li><a href="#Comments">{{ job.commentsCount + ' Comments' }}</a></li> -->
                                     </ul><!-- /.post-meta -->
-
-                                    <p class="section-text">
-                                        We are seeking a Senior Software Developer with expertise in building scalable
-                                        web applications. You'll be part of a team dedicated to creating innovative
-                                        software solutions for our diverse client base.
-                                    </p>
+                                    <p class="section-text">{{ job.description }}</p>
                                     <h2 class="post-title">Key Responsibilities:</h2>
                                     <ul>
-                                        <li>Develop and maintain web applications using modern technologies.</li>
-                                        <li>Collaborate with cross-functional teams to define, design, and ship new
-                                            features.</li>
-                                        <li>Ensure the performance, quality, and responsiveness of applications.</li>
+                                      <li v-for="(responsibility, index) in job.roles" :key="index">{{ responsibility }}</li>
                                     </ul>
                                     <h2 class="post-title">Requirements:</h2>
                                     <ul>
-                                        <li>Bachelor's degree in Computer Science or related field.</li>
-                                        <li>At least 5 years of experience in software development.</li>
-                                        <li>Strong proficiency in JavaScript frameworks such as React or Angular.</li>
+                                      <li v-for="(requirement, index) in job.requirements" :key="index">{{ requirement }}</li>
                                     </ul>
                                     <h2 class="post-title">How to Apply:</h2>
-                                    <p>If you meet the above criteria and are excited about the opportunity, please
-                                        submit your resume and a cover letter through our online application form. We
-                                        look forward to hearing from you!</p>
-                                </div><!-- /.post-content -->
+                                    <p>{{ job.how_to_apply }}</p>
+                                  </div><!-- /.post-content -->
 
                                 <div class="social-links">
                                     <p class="small-title mb-10">Share This:</p>
@@ -197,61 +185,22 @@
                                 </form>
                             </div><!-- /.search-form -->
 
-                            <div class="widget widget-categories">
-                                <h4 class="widget-title">Other Job Openings</h4>
-
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Junior Data Analyst</a></li>
-                                    <li><a href="#">Marketing Manager</a></li>
-                                    <li><a href="#">UX/UI Designer</a></li>
-
-                                </ul><!-- /.list-unstyled -->
-
-                            </div><!-- /.widget-categories -->
-
                             <div class="widget widget-latest-posts">
                                 <h4 class="widget-title">Latest Career Posts</h4>
 
                                 <ul class="list-unstyled posts-list">
 
-                                    <li>
-                                        <a href="Careers-post.html">
-                                            <div class="widget-thumb">
-                                                <img class="img-carousel" src="assets/img/portfolio-7.jpg" alt="">
-                                            </div>
-                                            <div class="widget-post-info">
-                                                <h4 class="widget-post-title">Graphics Designer
-                                                </h4>
-                                                <p class="widget-post-date">Sep 25, 2023
-                                                </p>
-                                            </div><!-- /.widget-post-info -->
+                                    <li v-for="(job, index) in jobs" :key="index">
+                                        <a :href="'Careers-post.html?id=' + job._id">
+                                          <div class="widget-thumb">
+                                            <img class="img-carousel" src="assets/img/portfolio-7.jpg" :alt="job.title">
+                                          </div>
+                                          <div class="widget-post-info">
+                                            <h4 class="widget-post-title">{{ job.title }}</h4>
+                                            <p class="widget-post-date">{{ job.date }}</p>
+                                          </div><!-- /.widget-post-info -->
                                         </a>
-                                    </li><!-- /.latest-post -->
-
-                                    <li>
-                                        <a href="Careers-post.html">
-                                            <div class="widget-thumb">
-                                                <img class="img-carousel" src="assets/img/portfolio-8.jpg" alt="">
-                                            </div>
-                                            <div class="widget-post-info">
-                                                <h4 class="widget-post-title">Product Designer</h4>
-                                                <p class="widget-post-date">Sep 23, 2023</p>
-                                            </div><!-- /.widget-post-info -->
-
-                                        </a>
-                                    </li><!-- /.latest-post -->
-
-                                    <li>
-                                        <a href="Careers-post.html">
-                                            <div class="widget-thumb">
-                                                <img class="img-carousel" src="assets/img/portfolio-9.jpg" alt="">
-                                            </div>
-                                            <div class="widget-post-info">
-                                                <h4 class="widget-post-title">Data Analyst</h4>
-                                                <p class="widget-post-date">Sep 22, 2022</p>
-                                            </div><!-- /.widget-post-info -->
-                                        </a>
-                                    </li><!-- /.latest-post -->
+                                      </li><!-- /.latest-post -->
 
                                 </ul>
 
@@ -260,14 +209,7 @@
                             <div class="widget widget-tags">
                                 <h4 class="widget-title">Tags</h4>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">technologies</a></li>
-                                    <li><a href="#">Creative</a></li>
-                                    <li><a href="#">Deisgn</a></li>
-                                    <li><a href="#">Business</a></li>
-                                    <li><a href="#">Modern</a></li>
-                                    <li><a href="#">Jobs</a></li>
-                                    <li><a href="#">Resources</a></li>
-                                    <li><a href="#">Corporate</a></li>
+                                    <li v-for="tag of job.tags"><a href="#">{{ tag }}</a></li>
                                 </ul>
                             </div><!-- /.widget-tags -->
 
@@ -388,6 +330,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.slicknav.min.js"></script>
@@ -397,6 +342,60 @@
     <script src="assets/js/jquery.countTo.min.js"></script>
     <script src="assets/js/script.js"></script>
 
+    <script src="assets/js/api.js"></script>
+
+    <script>
+        const app = new Vue({
+          el: '#main',
+          data: {
+            job: {},
+            jobs: [] // Initialize an empty array to store blog posts
+          },
+          mounted() {
+            // Fetch blog posts from the custom function when the Vue app is mounted
+            const queryParams = new URLSearchParams(window.location.search);
+            const postId = queryParams.get('id');
+
+            this.fetchJobs();
+            if (postId) {
+                console.log("Fetching....", postId)
+                this.fetchJobById(postId);
+            }
+
+          },
+          methods: {
+            fetchJobs() {
+              // Use the custom function to retrieve blog posts
+              getAllJobs()
+                .then(posts => {
+                    console.log(posts.map(p => p._id))
+                  this.jobs = posts; // Assign fetched blog posts to the data property
+                })
+                .catch(error => {
+                  console.error('Error fetching jobs:', error);
+                });
+            },
+            formatDate(date) {
+              // Implement a function to format the date as needed
+              console.log(date)
+              return new Date(date).toLocaleDateString();
+            },
+
+            fetchJobById(id) {
+                // Use a function to fetch blog post by ID (Replace this with your actual logic)
+                // You can use Axios or any other method to fetch the data
+                // Here is a placeholder function using setTimeout to simulate an asynchronous API call
+
+                getJobById(id)
+                .then(job => {
+                    this.job = job;
+                })
+            },
+
+          }
+        });
+      </script>
 </body>
 
 </html>
+

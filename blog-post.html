@@ -138,57 +138,18 @@
 
                                 <div class="post-content">
 
-                                    <h2 class="post-title">World's Successful Entrepreneurs</h2>
-                                    <ul class="post-meta list-unstyled">
-                                        <li><a href="#">Entrepreneurship</a></li>
-                                        <li><a href="#">Oct 5, 2022</a></li>
-                                        <li><a href="#Comments">15 Comments</a></li>
-                                    </ul><!-- /.post-meta -->
+                                    <div v-if="blogPost" class="blog-post-details">
 
-                                    <p class="section-text">Explore the fascinating and inspiring success stories of
-                                        some of the world's most renowned entrepreneurs. These individuals have not only
-                                        achieved remarkable success but have also left an indelible mark on the business
-                                        world. Dive deep into their journeys and discover how they turned mere ideas
-                                        into thriving, multimillion-dollar enterprises. Their stories are filled with
-                                        valuable insights, lessons, and strategies that aspiring entrepreneurs can use
-                                        to navigate the often challenging and competitive landscape of entrepreneurship.
-                                        These entrepreneurs come from diverse backgrounds and industries, but they all
-                                        share a common thread of relentless ambition, innovation, and a drive to make a
-                                        positive impact on society. From tech titans who disrupted entire industries to
-                                        visionary leaders who built global empires, their stories offer a wealth of
-                                        knowledge and inspiration.
+                                        <h2 class="post-title">{{ blogPost.title }}</h2>
+                                        <ul class="post-meta list-unstyled">
+                                          <li><a href="#">{{ blogPost.category }}</a></li>
+                                          <li><a href="#">{{ blogPost.date }}</a></li>
+                                          <li><a href="#Comments" v-if="blogPost.comments">{{ blogPost.comments.length }} Comments</a></li>
+                                        </ul><!-- /.post-meta -->
 
-                                        You'll learn about the early struggles and setbacks they faced, the pivotal
-                                        moments that defined their paths to success, and the principles and philosophies
-                                        that guided them throughout their entrepreneurial journeys. Discover how they
-                                        overcame adversity, adapted to changing market dynamics, and consistently pushed
-                                        the boundaries of what's possible.
+                                    </div>
 
-                                        By delving into these success stories, aspiring entrepreneurs can gain valuable
-                                        insights into:
-
-                                        Idea Generation: How these entrepreneurs conceptualized their groundbreaking
-                                        ideas and identified market opportunities.
-                                        Business Strategy: The strategic decisions and tactics they employed to position
-                                        their companies for growth and sustainability.
-                                        Innovation: Their approach to innovation and staying ahead of the competition in
-                                        rapidly evolving industries.
-                                        Leadership and Team Building: How they assembled and led high-performing teams
-                                        that shared their vision and values.
-                                        Resilience: Stories of overcoming failures, rejections, and setbacks that are an
-                                        inherent part of the entrepreneurial journey.
-                                        Adaptability: How they adapted to market changes, emerging technologies, and
-                                        shifts in consumer behavior.
-                                        Social Responsibility: The ways in which these entrepreneurs used their success
-                                        to give back to their communities and the world.
-                                        In these in-depth narratives, you'll gain insights into the personalities,
-                                        philosophies, and work ethics of these entrepreneurial icons. Their experiences
-                                        serve as a roadmap for those aspiring to make their mark in the business world,
-                                        offering valuable lessons that can help turn dreams into reality.
-
-                                        Join us on this enlightening journey through the lives and achievements of these
-                                        world-renowned entrepreneurs, and let their stories inspire and guide you as you
-                                        embark on your own entrepreneurial adventure.</p>
+                                    <p class="section-text">{{ blogPost.content }}</p>
 
                                 </div><!-- /.post-content -->
 
@@ -221,38 +182,16 @@
 
                                 <div id="Comments" class="post-comments">
 
-                                    <h3>2 Comments</h3>
+                                    <h3>{{ blogPost.comments.length }} Comments</h3>
 
-                                    <div class="post-comment">
+                                    <div class="post-comment" v-for="comment of blogPost.comments">
 
                                         <img class="img-carousel" src="assets/img/employee-3.jpg" alt="">
 
                                         <div class="post-comment-content">
 
-                                            <p class="post-comment-author-name">Richard Dawson</p>
-                                            <p class="post-comment-date">Jan 2, at 19:00</p>
-                                            <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-
-                                            <a href="#">Reply</a>
-
-                                        </div><!-- /.post-comment-content -->
-
-                                    </div><!-- /.post-comment -->
-
-                                    <div class="post-comment replied">
-
-                                        <img class="img-carousel" src="assets/img/employee-2.jpg" alt="">
-
-                                        <div class="post-comment-content">
-
-                                            <p class="post-comment-author-name">Cindy Bell</p>
-                                            <p class="post-comment-date">Jan 2, at 19:00</p>
-                                            <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                                                ipsum dolor sit amet</p>
-
-                                            <a class="yellow-text" href="#">Reply</a>
+                                            <p class="post-comment-author-name">{{ comment.name }}</p>
+                                            <p class="comment"> {{ comment.comment }} </p>
 
                                         </div><!-- /.post-comment-content -->
 
@@ -262,28 +201,22 @@
 
                                         <h3>Leave a comment</h3>
 
-                                        <form class="form-horizontal">
-
+                                        <!-- Comment form -->
+                                        <form class="form-horizontal" @submit.prevent="submitComment">
                                             <div class="row">
-
-                                                <div class="col-sm-6">
-                                                    <input class="form-control" type="text" name="name" required
-                                                        placeholder="Name *">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input class="form-control" type="email" name="email" required
-                                                        placeholder="Email *">
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <textarea class="form-control" placeholder="Comment"></textarea>
-                                                </div>
-                                                <div class="col-sm-12 text-right">
-                                                    <button type="submit" class="btn btn-medium btn-yellow">Post
-                                                        Comment</button>
-                                                </div>
-
+                                            <div class="col-sm-6">
+                                                <input v-model="commentData.name" class="form-control" type="text" name="name" required placeholder="Name *">
                                             </div>
-
+                                            <div class="col-sm-6">
+                                                <input v-model="commentData.email" class="form-control" type="email" name="email" required placeholder="Email *">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <textarea v-model="commentData.comment" class="form-control" placeholder="Comment"></textarea>
+                                            </div>
+                                            <div class="col-sm-12 text-right">
+                                                <button type="submit" class="btn btn-medium btn-yellow">Post Comment</button>
+                                            </div>
+                                            </div>
                                         </form>
 
                                     </div><!-- /.leave-comment -->
@@ -328,43 +261,17 @@
 
                                 <ul class="list-unstyled posts-list">
 
-                                    <li>
-                                        <a href="blog-post.html">
-                                            <div class="widget-thumb">
-                                                <img class="img-carousel" src="assets/img/portfolio-7.jpg" alt="">
-                                            </div>
-                                            <div class="widget-post-info">
-                                                <h4 class="widget-post-title">Business Perfect is the best Free Theme
-                                                </h4>
-                                                <p class="widget-post-date">Sep 25, 2015</p>
-                                            </div><!-- /.widget-post-info -->
+                                    <li v-for="post in blogPosts" :key="post._id" class="latest-post">
+                                        <a :href="'blog-post.html?id=' + post._id">
+                                          <div class="widget-thumb">
+                                            <img class="img-carousel" src="assets/img/portfolio-7.jpg" alt="">
+                                          </div>
+                                          <div class="widget-post-info">
+                                            <h4 class="widget-post-title">{{ post.title }}</h4>
+                                            <p class="widget-post-date">{{ formatDate(post.date) }}</p>
+                                          </div><!-- /.widget-post-info -->
                                         </a>
-                                    </li><!-- /.latest-post -->
-
-                                    <li>
-                                        <a href="blog-post.html">
-                                            <div class="widget-thumb">
-                                                <img class="img-carousel" src="assets/img/portfolio-8.jpg" alt="">
-                                            </div>
-                                            <div class="widget-post-info">
-                                                <h4 class="widget-post-title">We provide unique solutions</h4>
-                                                <p class="widget-post-date">Sep 23, 2015</p>
-                                            </div><!-- /.widget-post-info -->
-
-                                        </a>
-                                    </li><!-- /.latest-post -->
-
-                                    <li>
-                                        <a href="blog-post.html">
-                                            <div class="widget-thumb">
-                                                <img class="img-carousel" src="assets/img/portfolio-9.jpg" alt="">
-                                            </div>
-                                            <div class="widget-post-info">
-                                                <h4 class="widget-post-title">We are creative minds</h4>
-                                                <p class="widget-post-date">Sep 22, 2015</p>
-                                            </div><!-- /.widget-post-info -->
-                                        </a>
-                                    </li><!-- /.latest-post -->
+                                      </li><!-- /.latest-post -->
 
                                 </ul>
 
@@ -502,6 +409,10 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.slicknav.min.js"></script>
@@ -510,6 +421,81 @@
     <script src="assets/js/skrollr.min.js"></script>
     <script src="assets/js/jquery.countTo.min.js"></script>
     <script src="assets/js/script.js"></script>
+
+    <script src="assets/js/api.js"></script>
+
+    <script>
+        const app = new Vue({
+          el: '#main',
+          data: {
+            blogPost: {},
+            commentData: { // Object to store form input for posting comment
+                name: '',
+                email: '',
+                comment: ''
+            },
+            blogPosts: [] // Initialize an empty array to store blog posts
+          },
+          mounted() {
+            // Fetch blog posts from the custom function when the Vue app is mounted
+            const queryParams = new URLSearchParams(window.location.search);
+            const postId = queryParams.get('id');
+
+            this.fetchBlogPosts();
+            if (postId) {
+                console.log("Fetching....", postId)
+                this.fetchBlogPostById(postId);
+            }
+
+          },
+          methods: {
+            fetchBlogPosts() {
+              // Use the custom function to retrieve blog posts
+              getAllBlogs()
+                .then(posts => {
+                    console.log(posts.map(p => p._id))
+                  this.blogPosts = posts; // Assign fetched blog posts to the data property
+                })
+                .catch(error => {
+                  console.error('Error fetching blog posts:', error);
+                });
+            },
+            formatDate(date) {
+              // Implement a function to format the date as needed
+              console.log(date)
+              return new Date(date).toLocaleDateString();
+            },
+
+            fetchBlogPostById(id) {
+                // Use a function to fetch blog post by ID (Replace this with your actual logic)
+                // You can use Axios or any other method to fetch the data
+                // Here is a placeholder function using setTimeout to simulate an asynchronous API call
+
+                getBlogById(id)
+                .then(blogPost => {
+                    this.blogPost = blogPost;
+                })
+            },
+
+            submitComment() {
+                // Call postComment function with commentData when the form is submitted
+                postComment(this.commentData)
+                .then(response => {
+                    // Handle successful response
+                    console.log('Comment posted:', response);
+                    blogPost.comments.push(response)
+                    // Optionally, you can update the comments section or take any other action
+                })
+                .catch(error => {
+                    // Handle error
+                    console.error('Error posting comment:', error);
+                    // Optionally, display an error message or take corrective action
+                });
+            }
+
+          }
+        });
+      </script>
 
 </body>
 
