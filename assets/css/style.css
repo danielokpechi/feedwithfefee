@@ -1,10 +1,4 @@
-/*
-* Theme Name: BusinessPerfect
-* Theme URI: milansavov.com/freebies/businessperfect
-* Author: Milan Savov
-* Author URI: milansavov.com
-* Version: 1.0
-* */
+
 
 /* TABLE OF CONTENT 
 *
@@ -42,7 +36,7 @@
 /* CUSTOM RESETS
 ================================================== */
 a { 
-    color: #ffd500;
+    color: #FF000A;
 }
 
 a:focus,
@@ -98,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* btn colors */
 .btn-yellow {
-    background-color: #ffd500; 
+    background-color: #FF000A; 
     color: #fff;
 }
 
@@ -120,12 +114,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-yellow-border {
-    border: 1px solid #ffd500;
+    border: 1px solid #FF000A;
 }
 
 .btn.btn-yellow-border:hover,
 .btn.btn-yellow-border:focus {
-    background-color: #ffd500; 
+    background-color: #FF000A; 
     color: #fff; 
 }
 
@@ -169,7 +163,7 @@ textarea {
 }
 
 .form-control:focus {
-    border-color: #ffd500;
+    border-color: #FF000A;
     box-shadow: none;
 }
 
@@ -192,7 +186,7 @@ input[type=search] + button {
 
 input[type=search] + button:hover,
 input[type=search] + button:focus {
-    color: #ffd500;
+    color: #FF000A;
 }
 
 /* Checkbox fields */
@@ -245,7 +239,7 @@ input[type=radio] {
     top: 50%;
     left: 3px;
     font-size: 15px;
-    color: #ffd500;;
+    color: #FF000A;;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -282,12 +276,12 @@ input[type=radio] {
 
 .checkbox [type="checkbox"]:checked:focus + label:before,
 .checkbox [type="checkbox"]:not(:checked):focus + label:before {
-    border: 1px dotted #ffd500;
+    border: 1px dotted #FF000A;
 }
 
 .checkbox [type="checkbox"]:not(:checked) + label:hover:before,
 .checkbox [type="checkbox"]:checked + label:hover:before {
-    border: 1px solid #ffd500;
+    border: 1px solid #FF000A;
 }
 
 /* Radiobutton fields */
@@ -335,7 +329,7 @@ input[type=radio] {
     height: 12px;
     top: 50%;
     left: 4px;
-    background-color: #ffd500;
+    background-color: #FF000A;
     border-radius: 50px;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
@@ -373,12 +367,12 @@ input[type=radio] {
 
 .radio-btn [type="radio"]:checked:focus + label:before,
 .radio-btn [type="radio"]:not(:checked):focus + label:before {
-    border: 1px dotted #ffd500;
+    border: 1px dotted #FF000A;
 }
 
 .radio-btn [type="radio"]:checked + label:hover:before,
 .radio-btn [type="radio"]:not(:checked) + label:hover:before {
-    border: 1px solid #ffd500;
+    border: 1px solid #FF000A;
 }
 
 /* Selectpicker */
@@ -428,7 +422,7 @@ input[type=radio] {
 .selectpicker-styled:hover,
 .selectpicker-styled:active, 
 .selectpicker-styled.active {
-    border-color: #ffd500;
+    border-color: #FF000A;
 }
 
 .selectpicker-styled:active:after,
@@ -451,7 +445,7 @@ input[type=radio] {
 
 .selectpicker-options li {
     padding: 12px 15px;
-    border: 1px solid #ffd500;
+    border: 1px solid #FF000A;
     border-top: 0; 
     -moz-transition: all 0.15s ease-in;
     -o-transition: all 0.15s ease-in;
@@ -461,8 +455,8 @@ input[type=radio] {
 }
 
 .selectpicker-options li:hover {
-    color: #ffd500;
-    border-color: #ffd500;
+    color: #FF000A;
+    border-color: #FF000A;
 }
 
 /* ELEMENTS
@@ -478,8 +472,8 @@ input[type=radio] {
 }
 
 .nav-tabs.tab-style > li.active > a {
-    background-color: #ffd500;
-    border: 1px solid #ffd500;
+    background-color: #FF000A;
+    border: 1px solid #FF000A;
 }
 
 .nav-tabs.tab-style > li > a {
@@ -496,7 +490,7 @@ input[type=radio] {
 }
 
 .nav-tabs.tab-style > li > a:hover {
-    border-color: #ffd500;
+    border-color: #FF000A;
 }
 
 /* Accordion */
@@ -528,7 +522,7 @@ input[type=radio] {
     width: 100%;
     padding: 10px 40px 10px 15px;
     color: #333;
-    background-color: #ffd500;
+    background-color: #FF000A;
 }
 
 .accordion .panel-heading a.collapsed {
@@ -537,7 +531,7 @@ input[type=radio] {
 
 .accordion .panel-heading a.collapsed:hover,
 .accordion.accordion-gray .panel-heading a.collapsed:hover{
-    background-color: #ffd500;   
+    background-color: #FF000A;   
 }
 
 .accordion .panel-heading a.collapsed::after {
@@ -727,7 +721,7 @@ html, body {
 }
 
 .yellow-bg {
-  background-color: #ffd500;  
+  background-color: #FF000A;  
 }
 
 .black-bg {
@@ -786,7 +780,7 @@ a.white-text:hover {
 }
 
 .yellow-text {
-  color: #ffd500;  
+  color: #FF000A;  
 }
 
 /* Text styles */
@@ -816,7 +810,7 @@ a.white-text:hover {
 }
 
 .breadcrumb .active {
-  color: #ffd500;
+  color: #FF000A;
 }
 
 /* Pagination */
@@ -840,7 +834,7 @@ a.white-text:hover {
 .pagination > li.active > a,
 .pagination > li > a:hover,
 .pagination > li.active > a:hover {
-  background-color: #ffd500;
+  background-color: #FF000A;
   color: #fff;
 }
 
@@ -897,10 +891,15 @@ blockquote {
   width: 100%;
   border-bottom: 1px solid rgba(226,226,226,0);
   z-index: 3;
+  
+}
+#masthead {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .site-header-fill {
-  background-color: rgba(59,58,54,1);    
+  /* background-color: rgba(59,58,54,1);     */
   border-bottom: 1px solid rgba(226,226,226,1);
 }
 
@@ -920,10 +919,64 @@ blockquote {
 }
 
 .site-title.yellow-text:hover  {
-  color: #ffd500;   
+  color: #FF000A;   
 }
 
+/* Style for the navbar */
+#primary-navigation {
+  background-color: rgba(255, 255, 255, 0.865); /* Sets the navbar background to white */
+}
+
+/* Style for the nav items */
+/* Style for the nav items */
+#primary-navigation .navbar-nav > li > a {
+  color: black; /* Sets the color of nav items to black */
+  display: flex; /* Enables flexbox */
+  align-items: center; /* Centers vertically in the flex container */
+  height: 100%; /* Full height of the navbar */
+  padding-top: 12px; /* Adjust as needed */
+  padding-bottom: 12px; /* Adjust as needed */
+}
+
+
+/* Style for the active nav item */
+#primary-navigation .navbar-nav > .active > a {
+  color: red; /* Sets the color of the active nav item to red */
+
+}
+
+/* Additional styles for hover and focus states */
+#primary-navigation .navbar-nav > li > a:hover,
+#primary-navigation .navbar-nav > li > a:focus {
+  color: red; /* Changes color to red on hover/focus */
+}
+
+/* Style for the site title */
+.site-title {
+  color: #000000; /* Adjust the color as needed */
+}
+
+/* Adjust the color for the yellow-text and white-text classes if needed */
+.yellow-text {
+  color: #FFD700; /* Yellow color, adjust as needed */
+}
+
+.white-text {
+  color: #FFFFFF; /* White color, can adjust if needed */
+}
+
+
+
 /* Navigation */
+/* Targeting the font icon for the hamburger menu */
+.navbar-header .navbar-toggle .icon-bar {
+  background-color: red; /* Change to red */
+}
+
+
+
+
+
 .navbar-nav.navbar-right {
   margin-right: 0;
 }
@@ -935,7 +988,7 @@ blockquote {
   margin:  0 7px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #fff;
+  color: #FF000A;
 }
 
 .navbar-nav > li > a:hover,
@@ -949,17 +1002,17 @@ blockquote {
 .slicknav_nav li.active > a,
 .slicknav_nav .dropdown.active > a a,
 .slicknav_nav .active .active a {
-  color: #ffd500;  
+  color: #FF000A;  
 }
 
 .slicknav_nav > li > a .slicknav_arrow {
-  color: #fff;
+  color: #FF000A;
 }
 
 .dropdown-menu li.active a,
 .dropdown-menu li.active a:hover {
   background-color: transparent;
-  color: #ffd500;    
+  color: #FF000A;    
 }
 
 .navbar-nav > li > a:hover,
@@ -981,7 +1034,7 @@ blockquote {
   visibility: hidden;
   border-radius: 0;
   border: 0;
-  border-top: 5px solid #ffd500; 
+  border-top: 5px solid #FF000A; 
   transition: all 0.2s;
   -moz-transition: all 0.2s;
   -webkit-transition: all 0.2s;
@@ -1083,7 +1136,7 @@ blockquote {
 }
 
 .hero-arrow a:hover {
-  color: #ffd500; 
+  color: #FF000A; 
 }
 
 /* SITEMAIN
@@ -1232,7 +1285,7 @@ display: none;
 .service-icon .fa {
   font-size: 30px;
   line-height: 65px;
-  color: #ffd500;
+  color: #FF000A;
 }
 
 .service-title {
@@ -1297,7 +1350,7 @@ display: none;
 }
 
 .team-member-position {
-  color: #ffd500; 
+  color: #FF000A; 
   font-style: italic;
 }
 
@@ -1352,10 +1405,10 @@ display: none;
   background: url(../img/testimonial-2.jpg) no-repeat;
 }
 
-.testimonial-owner {
+/* .testimonial-owner {
   position: absolute;
   bottom: 10px;
-}
+} */
 
 .testimonial-owner p {
   margin: 0;
@@ -1520,8 +1573,8 @@ display: none;
 
 .portfolio-sorting .active,
 .portfolio-sorting .btn:active {
-  background-color: #ffd500; 
-  border-color: #ffd500; 
+  background-color: #FF000A; 
+  border-color: #FF000A; 
   color: #fff;
   box-shadow: none;
 }
@@ -1679,7 +1732,7 @@ display: none;
 
 a.post-title:hover,
 .blog-post > a:hover + .post-content .post-title {
-  color: #ffd500;
+  color: #FF000A;
 }
 
 .post-meta {
@@ -1715,7 +1768,7 @@ a.post-title:hover,
 }
 
 .post-meta li a:hover {
-  color: #ffd500;;
+  color: #FF000A;;
 } 
 
 .post-info {
@@ -1774,7 +1827,7 @@ a.post-title:hover,
 
 .widget-categories li a:hover {
   padding-left: 10px;
-  color: #ffd500;
+  color: #FF000A;
 }
 
 /* Latest-posts */
@@ -1819,7 +1872,7 @@ a.post-title:hover,
 }
 
 .posts-list li a:hover .widget-post-title {
-  color: #ffd500;
+  color: #FF000A;
 }
 
 /* Tags */ 
@@ -1837,7 +1890,7 @@ a.post-title:hover,
 }
 
 .widget-tags ul li a:hover {
-  background-color: #ffd500;
+  background-color: #FF000A;
   color: #fff;
 }
 
@@ -2034,6 +2087,6 @@ a.post-title:hover,
 }
 
 .copyright .yellow-text:hover {
-  color: #ffd500;
+  color: #FF000A;
   text-decoration: underline;
 }
